@@ -1,12 +1,12 @@
 class Recipe {
-    constructor(name, type, ingredients){
+    constructor(name, timeOfDay, ingredients){
         this.name = name;
-        this.type = type;
+        this.timeOfDay = timeOfDay;
         this.ingredients = ingredients;
     }
 
     describe(){
-        return `${this.name} is eaten at ${this.type} of the day`
+        return `${this.name} is eaten at ${this.timeOfDay} of the day`
     }
 }
 
@@ -104,7 +104,8 @@ class Menu {
 
             for (let i = 0; i < this.selectedChapter.recipes.length; i++)  {    
                 description += i + ") " + this.selectedChapter.recipes[i].name 
-                + " - " + this.selectedChapter.recipes[i].ingredients + "\n";
+                + " - " + this.selectedChapter.recipes[i].ingredients + " This meal is typically eaten at for " + this.selectedChapter.recipes[i].timeOfDay
+                "\n";
             }
 
             console.log(this.selectedChapter.recipes[0]);
@@ -129,9 +130,9 @@ class Menu {
 
     createRecipe() {
         let name = prompt("Enter name for new recipe:");
-        let type = prompt("Enter the time of day you eat this recipe");
+        let timeOfDay = prompt("Enter the time of day you eat this recipe");
         let ingredients = prompt("Enter ingredients for new recipe");
-        this.selectedChapter.recipes.push(new Recipe(name, type, ingredients));
+        this.selectedChapter.recipes.push(new Recipe(name, timeOfDay, ingredients));
     }
 
     deleteRecipe() {
