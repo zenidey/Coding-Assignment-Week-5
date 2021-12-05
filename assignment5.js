@@ -104,8 +104,8 @@ class Menu {
 
             for (let i = 0; i < this.selectedChapter.recipes.length; i++)  {    
                 description += i + ") " + this.selectedChapter.recipes[i].name 
-                + " - " + this.selectedChapter.recipes[i].ingredients + " This meal is typically eaten at for " 
-                + this.selectedChapter.recipes[i].timeOfDay
+                + " - " + this.selectedChapter.recipes[i].ingredients + "\n Enjoy this meal for " 
+                + this.selectedChapter.recipes[i].timeOfDay + "!"
                 "\n";
             }
 
